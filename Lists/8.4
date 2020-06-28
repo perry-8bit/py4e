@@ -1,0 +1,13 @@
+# 8.4 https://www.py4e.com/html3/08-lists
+
+a = []
+fname = input('Please enter file name: ')
+fhand = open(fname)
+for line in fhand:
+    line = line.rstrip()
+    h = line.split(' ')
+    for i in h:
+        if i not in a:
+            a.append(i)
+a.sort()
+print(a)
