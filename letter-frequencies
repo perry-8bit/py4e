@@ -1,0 +1,29 @@
+# 10.3 letter-frequencies https://www.py4e.com/html3/10-tuples
+import string
+
+fname = input('Please enter file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be found!')
+    exit()
+
+alphabet=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r',
+         's','t','u','v','w','x','y','z']
+count = dict()
+for line in fhand:
+    line = line.rstrip()
+    line = line.translate(line.maketrans('','',string.punctuation))
+    line = line.lower()
+    words = line.split()
+    for word in words:
+        for letter in word:
+            if letter in alphabet:
+                count[letter] = count.get(letter,0) + 1
+                
+lst = []
+for k, v in count.items():
+    lst.append((v,k))
+lst.sort(reverse=True)
+for v, k in lst:
+    print(k, v)
