@@ -1,0 +1,19 @@
+# 9.3 https://www.py4e.com/html3/09-dictionaries
+
+fname = input('Pleas enter file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('Fille cannot be found!')
+    exit()
+
+count = dict()
+for line in fhand:
+    if line.startswith('From'):
+        line = line.rstrip()
+        words = line.split()
+        if len(words) > 2:
+            m = words[1]
+            count[m] = count.get(m,0) + 1
+            
+print(count)
