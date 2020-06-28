@@ -1,0 +1,29 @@
+# 5.1 https://books.trinket.io/pfe/05-iterations.html
+smallest = None
+largest = None
+count = 0
+total = 0
+
+while True:
+    a = input('Please enter a number: ')
+    if a == 'done':
+        break
+    try:
+        h = float(a)
+        count += 1
+        total = total + h
+    except:
+        print('Invalid input, please enter again: ')
+        continue
+    if smallest is None:
+        smallest = h
+    elif largest is None:
+        largest = h
+    elif smallest > h:
+        smallest = h
+    elif largest < h:
+        largest = h
+
+print('largest: ', largest)
+print('smallest: ', smallest)
+print('total: {:.2f}, count: {:.0f}, average: {:.2f}'.format(total, count, total / count))
