@@ -1,0 +1,25 @@
+# 10.2 https://www.py4e.com/html3/10-tuples
+
+fname = input('Please enter file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be found!')
+    exit()
+
+count = dict()
+for line in fhand:
+    if line.startswith('From'):
+        line = line.rstrip()
+        words = line.split()
+        if len(words) > 2:
+            t = words[5]
+            time = t.split(':')
+            count[time[0]] = count.get(time[0],0) + 1
+
+lst = []
+for key, values in count.items():
+    lst.append((key, values))
+lst.sort()
+for key, values in lst:
+    print(key, values)
