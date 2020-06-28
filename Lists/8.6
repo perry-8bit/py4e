@@ -1,0 +1,15 @@
+# 8.6 https://www.py4e.com/html3/08-lists
+
+lst = []
+while True:
+    a = input('Enter a number: ')
+    try:
+        if a == 'done':
+            break
+        n = float(a)
+        lst.append(n)
+    except:
+        print('Erro: what you\'ve typed is not a number!' )
+        continue
+print('Maximum: ', max(lst))
+print('Minnumum: ', min(lst))
