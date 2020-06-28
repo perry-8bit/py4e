@@ -1,0 +1,16 @@
+# 5.2 https://books.trinket.io/pfe/05-iterations.html
+nums = []
+
+while True:
+    a = input('Enter a number: ')
+    if a == 'done':
+        break
+    try:
+        a = float(a)
+        nums.append(a)
+    except:
+        print('Invalid value')
+        continue
+
+print('Maximum is ', max(nums))
+print('Minumum is ', min(nums))
