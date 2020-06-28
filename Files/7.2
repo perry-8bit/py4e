@@ -1,0 +1,16 @@
+# 7.2 https://www.py4e.com/html3/07-files
+
+fname = input('Please enter file name: ')
+fhand = open(fname)
+count = 0
+total = 0
+for line in fhand:
+    if line.startswith('X-DSPAM-Confidence:'):
+        count += 1
+        position = line.find(':')
+        a = line[position+1:]
+        f = float(a.rstrip())
+        total = total + f
+    else:
+        continue
+print('Average spam confidenc: ', total / count)
