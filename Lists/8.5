@@ -1,0 +1,24 @@
+# 8.5 https://www.py4e.com/html3/08-lists
+
+a = []
+fname = input('Please enter file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be found: ',fname)
+    exit()
+count = 0
+for line in fhand:
+    if line.startswith('From'):
+        count += 1
+        h = line.split()
+        if len(h) > 2:
+            n = h[1].split('@')
+            name = n[0]
+            if name not in a:
+                a.append(name)
+            print(name)
+        #name = n[0]
+        #print(name)
+print('The name list is: ', a)
+print('There were {0} lines in the file with From as the first word'.format(count))
