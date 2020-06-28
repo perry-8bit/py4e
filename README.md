@@ -1,4 +1,3 @@
-# learn-python
-Examples from Python for Data Analysis
-Created by Perry
-From Chongqing to Shaghai to Edinburgh.
+# py4e
+
+assignment from https://www.py4e.com/
