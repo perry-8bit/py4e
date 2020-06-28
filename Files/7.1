@@ -1,0 +1,6 @@
+# 7.1 https://www.py4e.com/html3/07-files
+fname = input('Please enter file name: ')
+fhand = open(fname)
+for line in fhand:
+    line = line.rstrip()
+    print(line.upper())
