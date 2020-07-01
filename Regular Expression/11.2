@@ -1,0 +1,17 @@
+# 11.2 https://www.py4e.com/html3/11-regex
+import re
+
+fhand = open('mbox-short.txt')
+total = 0
+count = 0
+for line in fhand:
+    line = line.rstrip()
+    num = re.findall('New Revision: ([0-9.]+)', line)
+    for n in num:
+        if len(num) > 0:
+            n = float(n)
+            total += n
+            count += 1
+            
+avg = total / count
+print("Average: ", int(avg))
