@@ -1,0 +1,13 @@
+# 11.1 https://www.py4e.com/html3/11-regex
+import re
+
+fhand = open('mbox-short.txt')
+regname = input('Please enter regular expression: ')
+count = 0
+for line in fhand:
+    line = line.rstrip()
+    x = re.findall(regname, line)
+    if len(x) > 0:
+        count += 1
+        
+print('mbox-short.txt had {0} lines that mathched {1}.'.format(count, regname))
